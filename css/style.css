@@ -1,0 +1,555 @@
+body,
+.level__input,
+.button {
+    font-family: Roboto, sans-serif;
+}
+
+body,
+h1, 
+p,
+.level__input {
+    margin: 0;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("../img/background.png") no-repeat;
+    background-size: cover;
+    box-sizing: border-box;
+    height: 100vh;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+}
+
+.header {
+    margin-bottom: 60px;
+}
+
+.title, 
+.description, 
+.level__input, 
+.button {
+    color: #fff;
+    font-weight: bold;
+}
+
+.title {
+    margin-bottom: 8px;
+    font-size: 57px;
+    line-height: 67px;
+}
+
+.description {
+    font-size: 19px;
+    line-height: 22px;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+
+.level {
+    position: relative;
+}
+
+.level_active::before {
+    content: "";
+    position: absolute;
+    top: 30%;
+    width: 20px;
+    height: 20px;
+    background: #D62B2E;
+    transform: rotate(45deg);
+}
+
+.level__input {
+    position: relative;
+    padding-left: 40px;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 50px;
+    line-height: 59px;
+}
+
+.level__input:hover {
+    color: #D62B2E;
+    cursor: pointer;
+}
+
+.action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.button {
+    width: 352px;
+    height: 95px;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    background: #D62B2E;
+    font-size: 32px;
+    line-height: 37px;
+}
+
+.button:hover {
+    cursor: pointer;
+    opacity: .8;
+}
+
+.img {
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+}
+
+.none {
+    display: none;
+}
+
+.card {
+    width: 222px;
+    height: 345px;
+    perspective: 600px;
+    cursor: pointer;
+}
+
+.card__inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+.card__inner_hover:hover {
+    transform: rotate(-3.08deg) translateY(-15px);
+    transition: .5s linear;
+    filter: drop-shadow(10px 10px 15px rgba(0, 0, 0, 0.5));
+}
+
+.card__front,
+.card__back,
+.card__bug {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.card__back,
+.card__bug,
+.flipped {
+    transform: rotateY(180deg);
+}
+
+.card__front {
+    background: url("../img/card.png") no-repeat; 
+}
+
+.card__back {
+    background: url("../img/card_back.png") no-repeat;
+}
+
+.card__bug {
+    background: url("../img/card_bug.png") no-repeat;
+}
+
+.three_cards {
+    display: flex;
+    justify-content: space-between;
+    width: 714px;
+}
+
+.six_cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    width: 714px;
+    height: 714px;
+}
+
+.ten_cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    width: 1206px;
+    height: 714px;
+}
+
+@media (max-width: 1280px) {
+
+    .title {
+        font-size: 50px;
+        line-height: 60px;
+    }
+
+    .img {
+        max-width: 464px;
+    }
+
+    .ten_cards {
+        width: 966px;
+        height: 546px;
+    }
+
+    .ten_cards .card, 
+    .ten_cards .card__inner, 
+    .ten_cards .card__back, 
+    .ten_cards .card__front,
+    .ten_cards .card__bug {
+        width: 174px;
+        height: 261px;
+        background-size: 174px 261px;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    .header {
+        margin-bottom: 20px;
+    }
+
+    .nav .main {
+        align-items: center;
+    }
+
+    .title,
+    .level__input {
+        font-size: 32px;
+        line-height: 42px;
+    }
+
+    .level_active::before {
+        width: 16px;
+        height: 16px;
+    }
+
+    .button {
+        width: 250px;
+        height: 80px;
+        font-size: 28px;
+        line-height: 33px;
+    }
+
+    .img {
+        max-width: 360px;
+    }
+
+    .card, 
+    .card__inner, 
+    .card__back, 
+    .card__front, 
+    .card__bug {
+        width: 212px;
+        height: 325px;
+        background-size: 212px 325px;
+    }
+
+    .three_cards {
+        width: 684px;
+    }
+
+    .six_cards {
+        width: 684px;
+        height: 674px;
+    }
+
+    .ten_cards {
+        width: 721px;
+        height: 396px;
+    }
+
+    .ten_cards .card, 
+    .ten_cards .card__inner, 
+    .ten_cards .card__back, 
+    .ten_cards .card__front,
+    .ten_cards .card__bug {
+        width: 125px;
+        height: 186px;
+        background-size: 125px 186px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .action {
+        justify-content: center;
+    }
+
+    .nav, .button {
+        margin-bottom: 20px;
+    }
+
+    .card, 
+    .card__inner, 
+    .card__back, 
+    .card__front, 
+    .card__bug {
+        width: 154px;
+        height: 235px;
+        background-size: 154px 235px;
+    }
+
+    .three_cards {
+        width: 480px;
+    }
+
+    .six_cards {
+        width: 510px;
+        height: 494px;
+    }
+
+    .ten_cards {
+        width: 479px;
+        height: 260px;
+    }
+
+    .ten_cards .card, 
+    .ten_cards .card__inner, 
+    .ten_cards .card__back, 
+    .ten_cards .card__front,
+    .ten_cards .card__bug {
+        width: 80px;
+        height: 120px;
+        background-size: 80px 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    
+    .title {
+        font-size: 28px;
+        line-height: 33px;
+    }
+
+    .description {
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+    .card, 
+    .card__inner, 
+    .card__back, 
+    .card__front, 
+    .card__bug {
+        width: 125px;
+        height: 185px;
+        background-size: 125px 185px;
+    }
+
+    .three_cards {
+        width: 125px;
+        height: 600px;
+        flex-direction: column;
+    }
+
+    .six_cards {
+        width: 274px;
+        height: 603px;
+    }
+
+    .ten_cards {
+        width: 160px;
+        height: 600px;
+    }
+
+    .ten_cards .card, 
+    .ten_cards .card__inner, 
+    .ten_cards .card__back, 
+    .ten_cards .card__front,
+    .ten_cards .card__bug {
+        width: 70px;
+        height: 104px;
+        background-size: 70px 104px;
+    }
+}
+
+@media (max-width: 320px) {
+
+    .header,
+    .nav, 
+    .button {
+        margin-bottom: 10px;
+    }
+
+    .title,
+    .level__input {
+        font-size: 28px;
+        line-height: 33px;
+    }
+
+    .three_cards {
+        width: 110px;
+        height: 520px;
+    }
+
+    .card, 
+    .card__inner, 
+    .card__back, 
+    .card__front, 
+    .card__bug {
+        width: 110px;
+        height: 160px;
+        background-size: 110px 160px;
+    }
+
+    .six_cards {
+        width: 244px;
+        height: 528px;
+    }
+
+    .ten_cards {
+        width: 140px;
+        height: 524px;
+    }
+
+    .ten_cards .card, 
+    .ten_cards .card__inner, 
+    .ten_cards .card__back, 
+    .ten_cards .card__front,
+    .ten_cards .card__bug {
+        width: 60px;
+        height: 90px;
+        background-size: 60px 90px;
+    }
+}
+
+@media (max-height: 415px) {
+
+    .action {
+        justify-content: left;
+        position: relative;
+    }
+
+    .header,
+    .nav {
+        margin-bottom: 20px;
+    }
+
+    .button {
+        margin-bottom: 0;
+    }
+
+    .img {
+        width: 280px;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+
+    .six_cards {
+        width: 390px;
+        height: 366px;
+    }
+
+    .six_cards .card, 
+    .six_cards .card__inner, 
+    .six_cards .card__back, 
+    .six_cards .card__front,
+    .six_cards .card__bug {
+        width: 114px;
+        height: 171px;
+        background-size: 114px 171px;
+    }
+}
+
+@media (max-height: 376px) {
+
+    .img {
+        width: 250px;
+    }
+
+    .six_cards {
+        width: 336px;
+        height: 312px;
+    }
+
+    .six_cards .card, 
+    .six_cards .card__inner, 
+    .six_cards .card__back, 
+    .six_cards .card__front,
+    .six_cards .card__bug {
+        width: 96px;
+        height: 144px;
+        background-size: 96px 144px;
+    }
+
+    .ten_cards {
+        width: 580px;
+        height: 320px;
+    }
+
+    .ten_cards .card, 
+    .ten_cards .card__inner, 
+    .ten_cards .card__back, 
+    .ten_cards .card__front,
+    .ten_cards .card__bug {
+        width: 100px;
+        height: 150px;
+        background-size: 100px 150px;
+    }
+}
+
+@media (max-height: 320px) {
+
+    .header,
+    .nav {
+        margin-bottom: 10px;
+    }
+
+    .title,
+    .level__input {
+        font-size: 28px;
+        line-height: 33px;
+    }
+
+    .button,
+    .img {
+        width: 220px;
+    }
+
+    .six_cards {
+        width: 297px;
+        height: 272px;
+    }
+
+    .six_cards .card, 
+    .six_cards .card__inner, 
+    .six_cards .card__back, 
+    .six_cards .card__front,
+    .six_cards .card__bug {
+        width: 83px;
+        height: 124px;
+        background-size: 83px 124px;
+    }
+
+    .ten_cards {
+        width: 515px;
+        height: 280px;
+    }
+
+    .ten_cards .card, 
+    .ten_cards .card__inner, 
+    .ten_cards .card__back, 
+    .ten_cards .card__front,
+    .ten_cards .card__bug {
+        width: 87px;
+        height: 130px;
+        background-size: 87px 130px;
+    }
+}
