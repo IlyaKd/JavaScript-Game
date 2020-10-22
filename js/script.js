@@ -13,15 +13,15 @@ allLevels.forEach((item) => item.addEventListener('click', chooseLevel));
 const getNumberCards = currentLevel => {
     switch (currentLevel) {
         case 'simple':
-            cardsBox.classList.add('three_cards');
+            cardsBox.classList.add('three-cards');
             return 3;
             break;
         case 'average':
-            cardsBox.classList.add('six_cards');
+            cardsBox.classList.add('six-cards');
             return 6;
             break;
         case 'difficult':
-            cardsBox.classList.add('ten_cards');
+            cardsBox.classList.add('ten-cards');
             return 10;
             break;
     }
@@ -29,17 +29,23 @@ const getNumberCards = currentLevel => {
 
 const createCards = currentLevelForStart => {
     for (let i = 0; i < currentLevelForStart; i++) {
+        const container = document.createElement('div');
+        const containerFluid = document.createElement('div');
         const card = document.createElement('div');
         const cardInner = document.createElement('div');
         const cardFront = document.createElement('div');
         const cardBack = document.createElement('div');
 
+        container.classList.add('container');
+        containerFluid.classList.add('container__fluid');
         card.classList.add('card');
         cardInner.classList.add('card__inner', 'card__inner_hover');
         cardFront.classList.add('card__front');
         cardBack.classList.add('card__back');
 
-        cardsBox.append(card);
+        cardsBox.append(container);
+        container.append(containerFluid);
+        containerFluid.append(card);
         card.append(cardInner);
         cardInner.append(cardFront);
         cardInner.append(cardBack);
@@ -59,7 +65,7 @@ const createBug = currentLevelForStart => {
 };
 
 const deleteCards = () => {
-    cardsBox.classList.remove('three_cards', 'six_cards', 'ten_cards');
+    cardsBox.classList.remove('three-cards', 'six-cards', 'ten-cards');
     while (cardsBox.firstChild) {
         cardsBox.removeChild(cardsBox.firstChild);
     };
